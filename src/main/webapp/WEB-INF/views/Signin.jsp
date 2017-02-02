@@ -20,7 +20,7 @@
     </div>
     
     <ul class="nav navbar-nav navbar-left">
-    <li> <a href="About"> About page</a></li>
+    <li> <a href="About"> AboutUs</a></li>
     <li> <a href="Home"> Home</a></li>
     </ul>  
       

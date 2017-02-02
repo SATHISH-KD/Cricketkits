@@ -1,5 +1,5 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
+<html> 
 <head>
 							<!-- Bootstrap Command -->										
   
@@ -26,4 +26,4 @@
   				<script src="js/bootstrap.min.js"></script>
 
 </body>
-</html>
+</html> 

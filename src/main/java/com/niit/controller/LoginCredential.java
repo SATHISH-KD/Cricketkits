@@ -1,4 +1,4 @@
-package com.niit;
+package com.niit.controller;
 
 public class LoginCredential
 {
