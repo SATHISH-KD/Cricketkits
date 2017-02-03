@@ -21,6 +21,7 @@
     <ul class="nav navbar-nav navbar-left">
     <li> <a href="AboutUs"> AboutUs</a></li>
     <li> <a href="Home"> Home</a></li>
+    <li> <a href="ProductForm"> ProductForm</a></li>
     </ul>  
       
     <div class="nav navbar-nav">
