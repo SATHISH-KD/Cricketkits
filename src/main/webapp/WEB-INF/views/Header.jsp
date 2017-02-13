@@ -21,7 +21,12 @@
     <ul class="nav navbar-nav navbar-left">
     <li> <a href="AboutUs"> AboutUs</a></li>
     <li> <a href="Home"> Home</a></li>
-    <li> <a href="ProductForm"> ProductForm</a></li>
+    <li> <a href="admin/product/productform"> ProductForm</a></li>
+    
+    <c:url var="allProducts" value="/all/product/getAllProducts"></c:url>
+    <li><a href="${allProducts}"> Browse All products </a> </li>
+    
+    
     </ul>  
       
     <div class="nav navbar-nav">
