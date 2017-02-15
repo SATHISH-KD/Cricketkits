@@ -1,4 +1,3 @@
-
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page isELIgnored="false" %>
@@ -6,20 +5,28 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Product form</title>
-<script>
+<title>Product Form</title>
+
+<!-- <script>
 $(function(){
 $('input[name=mfg]').datepicker({
 	format:'YYYY-mm-dd'
+		
 });	
 });
-</script>
+</script> --> 
+
 </head>
+
 <body style="margin-top:80px;">
+
 <div class="container-wrapper">
 <div class="container">
+
 <c:url value="/admin/product/addProduct" var="url"></c:url>
-<form:form action="${url }"  commandName="product">
+<form:form action="${url }"  commandName="product">  
+
+<%-- <form:form action="/admin/product/addProduct" commandName="product">  --%>
 
 <div class="form-group">
 <label for="id"></label>
@@ -50,18 +57,19 @@ $('input[name=mfg]').datepicker({
 <form:errors path="quantity" cssStyle="color:#ff0000"></form:errors>
 </div>
 
-<div class="form-group">
+<%-- <div class="form-group">
 <label for="mfg">Mfg Date</label>
 <form:input path="mfg" class="form-control"/>
 <form:errors path="mfg" cssStyle="color:#ff0000"></form:errors>
-</div>
+</div>  --%>
 
 <div class="form-group">
 <label for="category">Category</label>
-<c:forEach var="c" items="${categories}">
-<form:radiobutton path="category.id" value="${c.id}"/>${c.categoryDetails }
+<c:forEach var="c" items="${categories }">
+<form:radiobutton path="category.id" value="${c.id }"/>
+${c.categoryDetails }
 </c:forEach>
-<form:errors path="mfg" cssStyle="color:#ff0000"></form:errors>
+<form:errors path="category" cssStyle="color:#ff0000"></form:errors>
 </div>
 
 <input type="submit" value="Add Product" class="btn btn-default">
@@ -85,24 +93,31 @@ $('input[name=mfg]').datepicker({
 
 
 
-<%-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+
+
+
+
+
+
+
+
+<%-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%> 
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
  
    <%@page isELIgnored="false" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-  <title>Spring MVC Form Handling</title>
+  <title>Product Page</title>
  </head>
  <body>
   <h2>Add Product Data</h2>
-  <for="POST" action="./saveProduct" commandName="prdfrm">
+  <form:form method="POST" action="./saveProduct" commandName="prdfrm">
       <table>
 <!--        <tr> -->
-           <td><form:label path="id">Product ID:</form:label></td>
-           <td><form:input path="id" value="${product.id}" readonly="true"/></td>
+           <td><form:label path="productid">Product ID:</form:label></td>
+           <td><form:input path="id" value="${product.productid}" readonly="true"/></td>
 <!--        </tr> -->
        <tr>
            <td><form:label path="name">Product Name:</form:label></td>
@@ -127,8 +142,7 @@ $('input[name=mfg]').datepicker({
    <a type="button" class="btn-success"  href="listProducts">View all products</a>
 
   <center>
-<div style="color: teal; font-size: 30px">Being Java Guys | User
-   Details</div>
+
 
   <c:if test="${!empty productList}">
    <table border="1" bgcolor="black" width="600px">
@@ -149,7 +163,7 @@ $('input[name=mfg]').datepicker({
       style="background-color: white; color: black; text-align: center;"
       height="30px">
       
-      <td><c:out value="${pd.id}" />
+      <td><c:out value="${pd.productid}" />
       </td>
       <td><c:out value="${pd.name}" />
       </td>
@@ -157,8 +171,8 @@ $('input[name=mfg]').datepicker({
       </td>
       <td><c:out value="${pd.price}" />
       </td>
-      <td><a href="edit?id=${pd.id}">Edit</a></td>
-      <td><a href="deleteProduct?id=${pd.id}">Delete</a></td>
+      <td><a href="edit?id=${pd.productid}">Edit</a></td>
+      <td><a href="deleteProduct?id=${pd.productid}">Delete</a></td>
      </tr>
     </c:forEach>
    </table>
@@ -166,11 +180,7 @@ $('input[name=mfg]').datepicker({
   <a href="ProductForm">add new product</a>
 </center>
   
-  
-  
-  
-  
 </form:form>
  
  </body>
-</html> --%>
+</html>  --%>
