@@ -7,8 +7,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.Min;
-//import org.hibernate.validator.constraints.NotEmpty;
+
+import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.web.multipart.MultipartFile;
+
 @Entity
 @Table(name="product")
 
@@ -17,10 +21,10 @@ public class Product {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 private int id;
 
-//@NotEmpty(message="Product Name is mandatory")
+@NotEmpty(message="Product Name is mandatory")
 private String name;
 
-//@NotEmpty(message="Description is Mandatory")
+@NotEmpty(message="Description is Mandatory")
 private String description;
 
 @Min(value=10)	
@@ -35,9 +39,21 @@ private Date mfg;*/
 @ManyToOne
 @JoinColumn(name="cid")
 private Category category;
+@Transient 
+private MultipartFile image;
+public Category getCategory(){
+	return category;
+}
+
 //sample_product [pid,name,description,price,quantity,mfg]
 public int getId() {
 	return id;
+}
+public MultipartFile getImage() {
+	return image;
+}
+public void setImage(MultipartFile image) {
+	this.image = image;
 }
 public void setId(int id) {
 	this.id = id;
@@ -72,10 +88,10 @@ public void setQuantity(int quantity) {
 public void setMfg(Date mfg) {
 	this.mfg = mfg;
 }*/
-public Category getCategory() {
+public Category getCategory1() {
 	return category;
 }
-public void setCategory(Category category) {
+public void setCategory1(Category category) {
 	this.category = category;
 }
 

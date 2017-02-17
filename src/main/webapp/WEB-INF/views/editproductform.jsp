@@ -21,8 +21,9 @@ $('input[name=mfg]').datepicker({
 <p>Date: <input type="text" id="datepicker"></p>
 <div class="container-wrapper">
 <div class="container">
+
 <c:url value="/admin/product/editProduct" var="url"></c:url>
-<form:form action="${url }"  commandName="product">
+<form:form action="${url }"  commandName="product" enctype="multipart/form-data">
 
 <div class="form-group">
 <label for="id"></label>
@@ -62,15 +63,12 @@ $('input[name=mfg]').datepicker({
 
 <div class="form-group">
 <label for="category">Category</label>
-List<Category> c =model.getAttribute("categories");
-out.println(c.id)
-out.println(c.categoryDetails);
- 
+
 <c:forEach var="c" items="${categories}">
 <form:radiobutton path="category.id" value="${c.id}"/>${c.categoryDetails }
 </c:forEach>
-<%-- <form:errors path="mfg" cssStyle="color:#ff0000"></form:errors>
-</div> --%>
+<%-- <form:errors path="mfg" cssStyle="color:#ff0000"></form:errors> --%>
+</div>
 
 <input type="submit" value="Edit Product" class="btn btn-default">
 </form:form>

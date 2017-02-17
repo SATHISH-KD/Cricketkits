@@ -18,18 +18,24 @@
 			<thead>
 				<tr>
 					<th>Product Name</th>
+					<th> Product Image</th>
 					<th>Description</th>
 					<th>Category</th>
+					<th>View/edit/delete</th>
 
 				</tr>
 			</thead>
 			<c:forEach var="p" items="${productList}">
 				<tr>
 					<td>${p.name }</td>
+					
+					<td> <c:url var="src" value="/resource/images/${p.id }.jpg"></c:url>
+				<img src="${src }" alt="Test image" style="width:300px;height:300px;"/>
+					</td>
+					
 					<td>${p.description }</td>
 					<td>${p.category.categoryDetails}</td>
-				</tr>
-				<tr>
+			
 					<c:url var="url" value="/all/product/viewproduct/${p.id }"></c:url>
 					<td>
 					<a href="${url }"><span class="glyphicon glyphicon-info-sign"></span></a> 

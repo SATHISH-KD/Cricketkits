@@ -24,9 +24,10 @@
     
     <li> <a href="admin/product/productform"> Products</a></li>
     
-    <c:url var="allProducts" value="/all/product/getAllProducts"></c:url>
-    <li><a href="${allProducts}"> Browse All products </a> </li>
+    <%-- <c:url var="allProducts" value="all/product/getAllProducts"></c:url>
+    <li><a href="${allProducts}"> Browse All products </a> </li> --%>
     
+    <li><a href="all/product/getAllProducts">Browse all products</a></li>
     
     </ul>  
       

@@ -24,13 +24,13 @@ $('input[name=mfg]').datepicker({
 <div class="container">
 
 <c:url value="/admin/product/addProduct" var="url"></c:url>
-<form:form action="${url }"  commandName="product">  
+<form:form action="${url }"  commandName="product" enctype="multipart/form-data">  
 
 <%-- <form:form action="/admin/product/addProduct" commandName="product">  --%>
 
 <div class="form-group">
 <label for="id"></label>
-<form:hidden  path=""/>
+<form:hidden  path="id"/>
 </div>
 
 <div class="form-group">
@@ -66,11 +66,17 @@ $('input[name=mfg]').datepicker({
 <div class="form-group">
 <label for="category">Category</label>
 <c:forEach var="c" items="${categories }">
-<form:radiobutton path="category.id" value="${c.id }"/>
+<form:radiobutton path="category1.id" value="${c.id }"/>
 ${c.categoryDetails }
 </c:forEach>
 <form:errors path="category" cssStyle="color:#ff0000"></form:errors>
 </div>
+
+<div class="form-group">
+<label for="image">Image</label>
+<form:input path="image" type="file"/>
+</div>
+
 
 <input type="submit" value="Add Product" class="btn btn-default">
 </form:form>

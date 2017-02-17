@@ -1,5 +1,9 @@
 package com.niit.controller;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -11,12 +15,15 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
+
 import com.niit.model.Product;
 import com.niit.service.CategoryService;
 import com.niit.service.ProductService;
 
 @Controller
 public class ProductController 
+
 {
 	@Autowired
 	private ProductService productService;
@@ -43,6 +50,21 @@ public class ProductController
 		if(result.hasErrors())
 			return "productform";
 		productService.saveProduct(product);
+		MultipartFile prodImage=product.getImage();
+		if(!prodImage.isEmpty()){
+			Path paths=
+	Paths.get("C:/Users/SATHISH7/workspace/CricketKits/src/main/webapp/resource/images/"+ product.getId()+".jpg");
+		try {
+			prodImage.transferTo(new File(paths.toString()));
+		} catch (IllegalStateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		}
+		
 		return "redirect:/all/product/getAllProducts";
 		
 	}
