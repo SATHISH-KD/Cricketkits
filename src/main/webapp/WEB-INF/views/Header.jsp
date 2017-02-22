@@ -1,10 +1,13 @@
- <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page isELIgnored="false" %>
+
 <html>
 <head>
 							<!-- BootStrap Command -->
 						
-				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>				
-				<link rel="stylesheet" href="<c:url value='/resource/css/bootstrap.min.css'/>"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>				
+	<link rel="stylesheet" href="<c:url value='/resource/css/bootstrap.min.css'/>"/>
  
 				
 </head>
@@ -20,29 +23,35 @@
     
     <ul class="nav navbar-nav navbar-left">
     <li> <a href="AboutUs"> AboutUs</a></li>
-    <li> <a href="Home"> Home</a></li>
+    <li> <a href="Home"> Home</a></li> 
     
-    <li> <a href="admin/product/productform"> Products</a></li>
+    <c:url var="ul" value="admin/product/productform"></c:url>
+    <li><a href="${ul }">product</a></li>
+       
+    <!-- <li> <a href="admin/product/productform"> Products</a></li> -->
     
-    <%-- <c:url var="allProducts" value="all/product/getAllProducts"></c:url>
-    <li><a href="${allProducts}"> Browse All products </a> </li> --%>
+    <c:url var="allProducts" value="all/product/getAllProducts"></c:url>
+    <li><a href="${allProducts}"> Browse All products </a> </li>
     
-    <li><a href="all/product/getAllProducts">Browse all products</a></li>
+    <!-- <li><a href="all/product/getAllProducts">Browse all products</a></li> -->
     
     </ul>  
       
     <div class="nav navbar-nav">
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">kits categories<span class="caret"></span></a>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="">kits categories<span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Cricket Batting Pads</a></li>
+          <!-- <li><a href="#">Cricket Batting Pads</a></li>
           <li><a href="#">Cricket Helmats</a></li>
           <li><a href="#">Cricket Bat</a></li>
           <li><a href="#">Cricket Ball</a></li>
-          <li><a href="#">Cricket Wicket Keeping Pads</a></li>
-          <li><a href="#">Cricket Batting Gloves</a></li>
-          <li><a href="#">Cricket Wicket  Keeping Gloves</a></li>
           <li><a href="#">Cricket  Dress</a></li>
-          </ul>
+          </ul> -->
+          
+          <c:url var="url1" value="all/product/productsByCategory?searchCondition=bat"></c:url>
+          <li><a href="${url1 }">bat</a></li>
+           <c:url var="url2" value="all/product/productsByCategory?searchCondition=ball"></c:url>
+          <li><a href="${url2 }">ball</a></li>
+         
       </li>
     </div>
     
@@ -53,9 +62,8 @@
     </ul>
   </div>
 </nav>
-					
 					<!-- Placed at the end of the doc so the pages load faster -->
 									
-			<script src="<c:url value='/resource/js/bootstrap.min.js'/>"/></script>
+     <script src="<c:url value='/resource/js/bootstrap.min.js'/>"/></script> 
 </body>
 </html>

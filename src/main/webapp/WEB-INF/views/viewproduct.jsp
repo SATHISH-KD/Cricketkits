@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<%@ include file="Header.jsp" %>
+							<!-- Header Coding -->
+							
+						<%@include file="Header.jsp" %>
 
 <html>
 <head>
@@ -14,7 +15,9 @@ ${product.name}
 </body>
 </html>
 
+                             <!-- Footer coding -->
 
+	                      <%@include file="Footer.jsp" %>
 
 
 

@@ -1,4 +1,8 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+							<!-- Header Coding -->
+							
+						<%@include file="Header.jsp" %>
+
 
 <html>
 <head>
@@ -85,12 +89,13 @@
         </div>
     </div>
   </div>
-  									 <!-- Footer coding -->
-			
-				                  <%@include file="Footer.jsp" %>
+  	
 			
 			<!-- Placed at the end of the document so the pages load faster -->
   
   				<script src="<c:url value='/resource/js/bootstrap.min.js'/>"/></script>
 </body>
 </html>
+  									 <!-- Footer coding -->
+			
+				                  <%@include file="Footer.jsp" %>

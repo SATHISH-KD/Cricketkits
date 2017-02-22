@@ -1,12 +1,9 @@
- <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+							<!-- Header Coding -->
+							
+						<%@include file="Header.jsp" %>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>carousal</title>
-                                         <!-- BootStrap Command -->
-         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-         <link rel="stylesheet" href="<c:url value='/resource/css/bootstrap.min.css'/>"/>
 <style>
   .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
@@ -16,9 +13,6 @@
 
 </style>
 <body>
-                          <!-- Header Coding -->
-							
-						<%@include file="Header.jsp" %>
 
 <div class="container-fluid">
   <br>
@@ -61,14 +55,13 @@
     </a>
   </div>
 </div>
- <!-- Footer coding -->
-			
-				                  <%@include file="Footer.jsp" %>
 			
 			<!-- Placed at the end of the document so the pages load faster -->
   
-  				<script src="<c:url value='/resource/js/bootstrap.min.js'/>"/></script>	
-  
+  		<script src="<c:url value='/resource/js/bootstrap.min.js'/>"/></script>
 	
 </body>
 </html>
+							 <!-- Footer coding -->
+
+	                  <%@include file="Footer.jsp" %>

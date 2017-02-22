@@ -1,10 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page isELIgnored="false" %>
-<%@ include file="Header.jsp" %>
+                          <!-- Header Coding -->
+							
+						<%@include file="Header.jsp" %>
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -80,7 +77,9 @@ $('input[name=mfg]').datepicker({
 </body>
 </html>
 
+						 <!-- Footer coding -->
 
+	                  <%@include file="Footer.jsp" %>
 
 
 

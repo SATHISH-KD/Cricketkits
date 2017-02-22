@@ -1,10 +1,10 @@
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page isELIgnored="false" %>
+							<!-- Header Coding -->
+							
+						<%@include file="Header.jsp" %>
+
 <%@ include file="Header.jsp" %>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Product Form</title>
 
 <!-- <script>
@@ -85,10 +85,13 @@ ${c.categoryDetails }
 
 
 </div>
+		<script src="<c:url value='/resource/js/bootstrap.min.js'/>"/></script>
 </body>
 </html>
 
+                         <!-- Footer coding -->
 
+	                  <%@include file="Footer.jsp" %>
 
 
 

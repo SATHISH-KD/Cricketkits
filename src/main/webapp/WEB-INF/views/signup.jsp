@@ -1,4 +1,7 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+                           <!-- Header Coding -->
+							
+						<%@include file="Header.jsp" %>
+
 
 <html>
     <head> 
@@ -122,10 +125,7 @@
 </div>
 </div>
 </div>
-			
-			 						<!-- Footer coding -->
-			
-				                  <%@include file="Footer.jsp" %>
+		
 
 		    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		    
@@ -137,3 +137,6 @@
 			
 	</body>
 </html>
+  									 <!-- Footer coding -->
+			
+				                  <%@include file="Footer.jsp" %>
